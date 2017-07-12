@@ -43,7 +43,7 @@ require("source-map-support").install();
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
@@ -53,7 +53,7 @@ require("source-map-support").install();
 	
 	var index = _interopRequire(__webpack_require__(2));
 	
-	var page = _interopRequire(__webpack_require__(3));
+	var page = _interopRequire(__webpack_require__(4));
 	
 	var app = express();
 	app.get("/", index);
@@ -62,21 +62,21 @@ require("source-map-support").install();
 	console.log("Listening on port 4000...");
 	app.listen(4000);
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	module.exports = require("express");
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 	
-	var t = _interopRequire(__webpack_require__(4));
+	var t = _interopRequire(__webpack_require__(3));
 	
 	module.exports = function (req, res) {
 	  var arr = JSON.parse(req.query.arr || "[]");
@@ -85,9 +85,15 @@ require("source-map-support").install();
 	  }));
 	};
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
+
+	module.exports = require("transducers.js");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
 
 	"use strict";
 	
@@ -95,12 +101,6 @@ require("source-map-support").install();
 	  res.send("page");
 	};
 
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = require("transducers.js");
-
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=backend.js.map
